@@ -1,11 +1,11 @@
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Movie  # Импортируем правильную модель
-from .serializers import MovieSerializer  # Импортируем правильный сериализатор
+from .models import Movie
+from .serializers import MovieSerializer
 
 class MovieDetailView(RetrieveAPIView):
-    queryset = Movie.objects.all()  # Исправлено: заменили Product на Movie
+    queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
     def get(self, request, *args, **kwargs):
